@@ -13,10 +13,8 @@ do
     case $opt in
         "Flutter Cleanup")
             echo ""
-            echo ""
             echo "Flutter Clean Recursive ( by AlfanCodes )"
             echo "Looking for projects... ( it may take a while )"
-
             find . -name "pubspec.yaml" -exec $SHELL -c '
                 echo "Done. Cleaning all projects."
                 for i in "$@" ; do
@@ -26,16 +24,13 @@ do
                 done
                 echo "DONE!"
                 echo ""
-                echo ""
             ' {} +
             break
             ;;
         "Node Modules Cleanup")
             echo ""
-            echo ""
             echo "Node Modules Recursive ( by AlfanCodes )"
             echo "Looking for projects... ( may take a while )"
-
             find . -name "package.json" -exec $SHELL -c '
                 echo "Done. Cleaning all projects."
                 for i in "$@" ; do
@@ -44,7 +39,6 @@ do
                     (cd "$DIR" && rm -fr node_modules >/dev/null 2>&1)
                 done
                 echo "DONE!"
-                echo ""
                 echo ""
             ' {} +
             break
